@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AppRickAndMorty</string>
+    <string name="Name">Nombre:</string>
+    <string name="Info_Name">nombre personaje</string>
+    <string name="Status">Estado:</string>
+    <string name="Info_Status">8 horas</string>
+    <string name="Specie">Especie:</string>
+    <string name="Info_Specie">Especie</string>
+    <string name="Genre">Genero:</string>
+    <string name="Info_Gender">Genre</string>
+</resources>

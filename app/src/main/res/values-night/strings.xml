@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Name">Nombre:</string>
+    <string name="Info_Name">nombre personaje</string>
+    <string name="Status">Estado:</string>
+    <string name="Specie">Especie:</string>
+    <string name="Genre">Genero:</string>
+    <string name="Info_Gender">Genre</string>
+</resources>
