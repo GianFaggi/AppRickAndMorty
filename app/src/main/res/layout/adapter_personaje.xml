@@ -72,7 +72,7 @@
                         android:id="@+id/Estado"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Estado"
+                        android:text="@string/Tit_Estado"
                         android:textColor="#ff8c55"
                         android:textSize="18sp"
                         />
@@ -102,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:text="Especie"
+                    android:text="@string/Tit_espec"
                     android:textColor="#ff8c55"
                     />
 
@@ -129,7 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
-                        android:text="Genero"
+                        android:text="@string/Tit_Genero"
                         android:textColor="#ff8c55"
                         />
 

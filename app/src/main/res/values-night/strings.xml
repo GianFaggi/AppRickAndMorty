@@ -6,4 +6,8 @@
     <string name="Specie">Especie:</string>
     <string name="Genre">Genero:</string>
     <string name="Info_Gender">Genre</string>
+    <string name="Tit_Genero">Genero</string>
+    <string name="Tit_espec">Especie</string>
+    <string name="Tit_Origen">Origen:</string>
+    <string name="Tit_Loc">Localizacion:</string>
 </resources>

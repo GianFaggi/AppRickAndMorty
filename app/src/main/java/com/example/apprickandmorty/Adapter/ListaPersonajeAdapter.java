@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,10 +25,6 @@ public class ListaPersonajeAdapter extends RecyclerView.Adapter<ListaPersonajeAd
         private Context context;
 
 
-        public interface OnItemClickListener {
-                void onItemClick(Personaje item);
-        }
-
         public ListaPersonajeAdapter(Context context) {
                 this.context = context;
                 dataset = new ArrayList<>();
@@ -46,16 +41,14 @@ public class ListaPersonajeAdapter extends RecyclerView.Adapter<ListaPersonajeAd
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
                 Personaje p = dataset.get(position);
-
                 holder.name.setText(p.getName());
                 holder.status.setText(p.getStatus());
                 holder.species.setText(p.getSpecie());
-                holder.gender.setText(p.getGenre());
+                holder.gender.setText(p.getGender());
                 Glide.with(context).load("https://rickandmortyapi.com/api/character/avatar/" + p.getNumber())
                         .centerCrop()
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(holder.imagen);
-
         }
 
         @Override
@@ -64,6 +57,7 @@ public class ListaPersonajeAdapter extends RecyclerView.Adapter<ListaPersonajeAd
         }
 
         public void adicionarListaPersonaje(ArrayList<Personaje> listapersonaje) {
+                dataset.clear();
                 dataset.addAll(listapersonaje);
                 notifyDataSetChanged();
         }
@@ -71,7 +65,7 @@ public class ListaPersonajeAdapter extends RecyclerView.Adapter<ListaPersonajeAd
         public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
                 private ImageView imagen;
-                private TextView status, gender, species, name, origen, localizacion;
+                private TextView status, gender, species, name, page;
 
                 public ViewHolder(View itemView) {
                         super(itemView);
@@ -87,16 +81,9 @@ public class ListaPersonajeAdapter extends RecyclerView.Adapter<ListaPersonajeAd
                 @Override
                 public void onClick(View v) {
                         int position = getAdapterPosition();
-                        Toast.makeText(context, "position"+position, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(context, Detalle_Personaje.class);
-                        intent.putExtra("name", dataset.get(position).getName());
-                        intent.putExtra("status", dataset.get(position).getStatus());
-                        intent.putExtra("image", dataset.get(position).getImage());
-                        intent.putExtra("number", dataset.get(position).getNumber());
-                        intent.putExtra("nameOrigen", String.valueOf(dataset.get(position).getOrigin().getName()));
-                        intent.putExtra("namelocation", String.valueOf(dataset.get(position).getlocation().getName()));
+                        intent.putExtra("id", dataset.get(position).getId());
                         context.startActivities(new Intent[]{intent});
-
                         }
                 }
         }
